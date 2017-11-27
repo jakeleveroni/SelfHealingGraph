@@ -20,17 +20,6 @@ namespace SelfHealingNetwork.Structures
             _edges = edges;
             _bus = new EventBus();
             _eventTokens = new List<SubscriptionToken> {_bus.Subscribe<NodeDroppedEvent<T>>(OnNodeDropped)};
-
-        }
-
-        public void AddEdge(WeightedEdge<T> newEdge)
-        {
-            _edges.Add(newEdge);
-        }
-
-        public void RemoveEdge(WeightedEdge<T> edge)
-        {
-            _edges.Remove(edge);
         }
 
         public void AddNode(Node<T> node)
@@ -39,13 +28,6 @@ namespace SelfHealingNetwork.Structures
                 _nodes.Add(node);
         }
 
-        public void RemoveNode(Node<T> node)
-        {
-            _nodes.Remove(node);
-        }
-
-        public Node<T> CheckForailingNode() =>_nodes.FirstOrDefault(node => node.WillFail());
-        
         public List<Node<T>> ShortestPath<TSearchAlgorithm>(Node<T> start, Node<T> end) where TSearchAlgorithm : ISearchAlgorithm, new()
         {
             var searchAlgorithm = new TSearchAlgorithm();
@@ -65,9 +47,10 @@ namespace SelfHealingNetwork.Structures
             // TODO handle dropped node
         }
 
-        public void Dispose()
-        {
-            _eventTokens.ForEach(t => _bus.Unsubscribe(t));
-        }
+        public void RemoveNode(Node<T> node) => _nodes.Remove(node);
+        public Node<T> CheckForailingNode() =>_nodes.FirstOrDefault(node => node.WillFail());
+        public void Dispose() => _eventTokens.ForEach(t => _bus.Unsubscribe(t));    
+        public void AddEdge(WeightedEdge<T> newEdge) => _edges.Add(newEdge);
+        public void RemoveEdge(WeightedEdge<T> edge) => _edges.Remove(edge);
     }
 }
