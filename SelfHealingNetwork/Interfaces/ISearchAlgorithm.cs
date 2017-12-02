@@ -5,6 +5,6 @@ namespace SelfHealingNetwork.Interfaces
 {
     public interface ISearchAlgorithm
     {
-        List<Node<T>> Search<T>(Node<T> start, Node<T> end);
+        List<Node> Search(Node start, Node end);
     }
 }

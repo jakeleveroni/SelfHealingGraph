@@ -58,7 +58,9 @@
     <Compile Include="SearchAlgorithms\SearchAlgorithm.cs" />
     <Compile Include="Structures\NetworkGraph.cs" />
     <Compile Include="Structures\Node.cs" />
+    <Compile Include="Structures\TimingStatistic.cs" />
     <Compile Include="Structures\WeightedEdge.cs" />
+    <Compile Include="Utility.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

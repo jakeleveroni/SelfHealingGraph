@@ -6,11 +6,11 @@ namespace SelfHealingNetwork.SearchAlgorithms
 {
     public abstract class SearchAlgorithm : ISearchAlgorithm
     {
-        public abstract List<Node<T>> Search<T>(Node<T> start, Node<T> end);
+        public abstract List<Node> Search(Node start, Node end);
         
-        protected static List<Node<T>> ReconstructPath<T>(Dictionary<Node<T>, Node<T>> parentMap, Node<T> start, Node<T> end)
+        protected static List<Node> ReconstructPath(Dictionary<Node, Node> parentMap, Node start, Node end)
         {
-            var path = new List<Node<T>>();
+            var path = new List<Node>();
             var current = end;
 
             while (current != start)

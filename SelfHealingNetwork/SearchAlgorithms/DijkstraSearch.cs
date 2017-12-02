@@ -7,10 +7,10 @@ namespace SelfHealingNetwork.SearchAlgorithms
 {
     public class DijkstraSearch : SearchAlgorithm
     {
-        public override List<Node<T>> Search<T>(Node<T> start, Node<T> end)
+        public override List<Node> Search(Node start, Node end)
         {
-            var parentMap = new Dictionary<Node<T>, Node<T>>();
-            var priorityQueue = new ConcurrentPriorityQueue<Node<T>, double>();
+            var parentMap = new Dictionary<Node, Node>();
+            var priorityQueue = new ConcurrentPriorityQueue<Node, double>();
 
             priorityQueue.Enqueue(start, start.Cost);
 

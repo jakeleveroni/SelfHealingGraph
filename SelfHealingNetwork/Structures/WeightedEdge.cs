@@ -2,13 +2,13 @@
 
 namespace SelfHealingNetwork.Structures
 {
-    public class WeightedEdge<T>
+    public class WeightedEdge
     {
         public int Weight { get; }
-        private Node<T> Start { get; }
-        public Node<T> End { get; }
+        public Node Start { get; }
+        public Node End { get; }
 
-        public WeightedEdge(Node<T> start, Node<T> end, int weight)
+        public WeightedEdge(Node start, Node end, int weight)
         {
             Start = start;
             End = end;
@@ -17,7 +17,7 @@ namespace SelfHealingNetwork.Structures
             start.AddEdge(this);
         }
 
-        public bool ContainsNode(Node<T> node)
+        public bool ContainsNode(Node node)
         {
             return Start == node || End == node;
         }

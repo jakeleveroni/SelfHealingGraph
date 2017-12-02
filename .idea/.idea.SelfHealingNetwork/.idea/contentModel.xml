@@ -26,8 +26,10 @@
         <e p="Structures" t="Include">
           <e p="NetworkGraph.cs" t="Include" />
           <e p="Node.cs" t="Include" />
+          <e p="TimingStatistic.cs" t="Include" />
           <e p="WeightedEdge.cs" t="Include" />
         </e>
+        <e p="Utility.cs" t="Include" />
       </e>
       <e p="SelfHealingNetwork.sln" t="IncludeFlat" />
     </e>

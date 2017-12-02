@@ -6,11 +6,11 @@ using SelfHealingNetwork.Events;
 
 namespace SelfHealingNetwork.Structures
 {
-    public class Node<T> : IDisposable
+    public class Node : IDisposable
     {
-        private readonly List<Node<T>> _neighbors;
-        public readonly List<WeightedEdge<T>> Edges;
-        public T Value { get; }
+        private readonly List<Node> _neighbors;
+        public readonly List<WeightedEdge> Edges;
+        public char Value { get; }
         private static readonly EventBus _bus = new EventBus();
         public int FailureProbability;
         private static Random _rng = new Random();
@@ -18,21 +18,21 @@ namespace SelfHealingNetwork.Structures
         public bool IsVisited { get; set; }
         public double Cost { get; set; }
 
-        public Node(T value)
+        public Node(char value)
         {
             Value = value;
             IsVisited = false;
-            _neighbors = new List<Node<T>>();
-            Edges = new List<WeightedEdge<T>>();
+            _neighbors = new List<Node>();
+            Edges = new List<WeightedEdge>();
             FailureProbability = _rng.Next(1, 101);
         }
 
-        public Node(T value, List<Node<T>> neighbors)
+        public Node(char value, List<Node> neighbors)
         {
             Value = value;
             IsVisited = false;
             _neighbors = neighbors;
-            Edges = new List<WeightedEdge<T>>();
+            Edges = new List<WeightedEdge>();
             FailureProbability = _rng.Next(1, 101);
         }
 
@@ -44,12 +44,25 @@ namespace SelfHealingNetwork.Structures
         }
 
         public bool WillFail() => _rng.Next(1, 101) < FailureProbability;       
-        public void AddNeighbor(Node<T> node) => _neighbors?.Add(node);
-        public void AddEdge(WeightedEdge<T> edge) => Edges?.Add(edge);
-        
+        public void AddNeighbor(Node node) => _neighbors?.Add(node);
+
+        public void AddEdge(WeightedEdge edge)
+        {
+            if (!Edges.Contains(edge))
+            {
+                Edges?.Add(edge);
+            }
+        }
+
+        public bool EdgeExists(Node n1, Node n2)
+        {
+            var edge = Edges.Find(e => e.Start == n1 && e.End == n2);
+            return edge != default(WeightedEdge);
+        }
+
         public void Dispose()
         {
-            _bus.Publish(new NodeDroppedEvent<T>(this));
+            _bus.Publish(new NodeDroppedEvent(this));
         }
     }
 }

@@ -3,11 +3,11 @@ using SelfHealingNetwork.Structures;
 
 namespace SelfHealingNetwork.Events
 {
-    public class NodeDroppedEvent<T> : EventBase
+    public class NodeDroppedEvent : EventBase
     {
-        public readonly Node<T> DroppedNodeInformation;
+        public readonly Node DroppedNodeInformation;
 
-        public NodeDroppedEvent(Node<T> n)
+        public NodeDroppedEvent(Node n)
         {
             DroppedNodeInformation = n;
         }
