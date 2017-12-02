@@ -2,17 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7decc073-e9ec-48b9-8806-99258045e928" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.SelfHealingNetwork/.idea/contentModel.xml" afterPath="$PROJECT_DIR$/.idea/.idea.SelfHealingNetwork/.idea/contentModel.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.SelfHealingNetwork/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.SelfHealingNetwork/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SelfHealingNetwork/Events/NodeDroppedEvent.cs" afterPath="$PROJECT_DIR$/SelfHealingNetwork/Events/NodeDroppedEvent.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SelfHealingNetwork/Interfaces/ISearchAlgorithm.cs" afterPath="$PROJECT_DIR$/SelfHealingNetwork/Interfaces/ISearchAlgorithm.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SelfHealingNetwork/Program.cs" afterPath="$PROJECT_DIR$/SelfHealingNetwork/Program.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SelfHealingNetwork/SearchAlgorithms/DijkstraSearch.cs" afterPath="$PROJECT_DIR$/SelfHealingNetwork/SearchAlgorithms/DijkstraSearch.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SelfHealingNetwork/SearchAlgorithms/SearchAlgorithm.cs" afterPath="$PROJECT_DIR$/SelfHealingNetwork/SearchAlgorithms/SearchAlgorithm.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SelfHealingNetwork/SelfHealingNetwork.csproj" afterPath="$PROJECT_DIR$/SelfHealingNetwork/SelfHealingNetwork.csproj" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SelfHealingNetwork/Structures/NetworkGraph.cs" afterPath="$PROJECT_DIR$/SelfHealingNetwork/Structures/NetworkGraph.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SelfHealingNetwork/Structures/Node.cs" afterPath="$PROJECT_DIR$/SelfHealingNetwork/Structures/Node.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SelfHealingNetwork/Structures/WeightedEdge.cs" afterPath="$PROJECT_DIR$/SelfHealingNetwork/Structures/WeightedEdge.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -262,12 +252,20 @@
       <option name="presentableId" value="Default" />
       <updated>1511061759103</updated>
       <workItem from="1511061760293" duration="12961000" />
-      <workItem from="1512112075594" duration="5043000" />
+      <workItem from="1512112075594" duration="5115000" />
     </task>
+    <task id="LOCAL-00001" summary="removed template, added timing statistics and utility, added logging and graph generation">
+      <created>1512244015116</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1512244015116</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18004000" />
+    <option name="totallyTimeSpent" value="18076000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -333,6 +331,10 @@
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="removed template, added timing statistics and utility, added logging and graph generation" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed template, added timing statistics and utility, added logging and graph generation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
