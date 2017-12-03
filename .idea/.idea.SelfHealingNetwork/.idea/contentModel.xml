@@ -26,6 +26,7 @@
         <e p="Structures" t="Include">
           <e p="NetworkGraph.cs" t="Include" />
           <e p="Node.cs" t="Include" />
+          <e p="ShortestPathsTable.cs" t="Include" />
           <e p="TimingStatistic.cs" t="Include" />
           <e p="WeightedEdge.cs" t="Include" />
         </e>

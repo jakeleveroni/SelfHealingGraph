@@ -8,7 +8,7 @@ namespace SelfHealingNetwork.Structures
 {
     public class Node : IDisposable
     {
-        private readonly List<Node> _neighbors;
+        public readonly List<Node> Neighbors;
         public readonly List<WeightedEdge> Edges;
         public char Value { get; }
         private static readonly EventBus _bus = new EventBus();
@@ -22,7 +22,7 @@ namespace SelfHealingNetwork.Structures
         {
             Value = value;
             IsVisited = false;
-            _neighbors = new List<Node>();
+            Neighbors = new List<Node>();
             Edges = new List<WeightedEdge>();
             FailureProbability = _rng.Next(1, 101);
         }
@@ -31,7 +31,7 @@ namespace SelfHealingNetwork.Structures
         {
             Value = value;
             IsVisited = false;
-            _neighbors = neighbors;
+            Neighbors = neighbors;
             Edges = new List<WeightedEdge>();
             FailureProbability = _rng.Next(1, 101);
         }
@@ -39,12 +39,12 @@ namespace SelfHealingNetwork.Structures
         public override string ToString()
         {
             var s = new StringBuilder("{value} :");
-            _neighbors.ForEach(n => s.Append($"{n.Value} "));
+            Neighbors.ForEach(n => s.Append($"{n.Value} "));
             return s.ToString();
         }
 
         public bool WillFail() => _rng.Next(1, 101) < FailureProbability;       
-        public void AddNeighbor(Node node) => _neighbors?.Add(node);
+        public void AddNeighbor(Node node) => Neighbors?.Add(node);
 
         public void AddEdge(WeightedEdge edge)
         {

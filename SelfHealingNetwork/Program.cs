@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Threading;
 using SelfHealingNetwork.Structures;
 using SelfHealingNetwork.Xml;
 
@@ -9,16 +10,18 @@ namespace SelfHealingNetwork
     {
         public static void Main(string[] args)
         {
-//            var graph = new NetworkGraph();
-//            graph.GenerateNetworkGraph();
-//            graph.PrintGraph();
-            
             var deser = new Deserializer();
             var graphData = deser.LoadGraph();
 
             var graph = NetworkGraph.BuildGraphFromXmlGraph(graphData);
-            graph.PrintGraph();
-            Console.ReadKey();
+            
+            while (true)
+            {
+                if (!graph.KillNode()) continue;
+                
+                // simulate dropped node every 5 seconds
+                Thread.Sleep(10000);
+            }
         }
     }
 }

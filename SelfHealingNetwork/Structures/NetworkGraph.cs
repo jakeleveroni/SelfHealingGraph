@@ -1,10 +1,15 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel.Design;
+using System.Configuration;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using SelfHealingNetwork.Interfaces;
 using SelfHealingNetwork.Events;
 using Redbus;
+using SelfHealingNetwork.SearchAlgorithms;
 using SelfHealingNetwork.Xml;
 
 namespace SelfHealingNetwork.Structures
@@ -28,6 +33,11 @@ namespace SelfHealingNetwork.Structures
         {
             if (!_nodes.Contains(node))
                 _nodes.Add(node);
+        }
+
+        public Node FindNodeByValue(char value)
+        {
+            return _nodes.Find(n => n.Value == value);
         }
 
         public static NetworkGraph BuildGraphFromXmlGraph(Graph graphData)
@@ -119,7 +129,7 @@ namespace SelfHealingNetwork.Structures
             return searchAlgorithm.Search(start, end);      
         }
 
-        private void InitializeCosts(Node  start)
+        private void InitializeCosts(Node start)
         {
             _nodes.ForEach(n => n.Cost = int.MaxValue);
             start.Cost = 0;
@@ -129,12 +139,66 @@ namespace SelfHealingNetwork.Structures
         {
             var timing = new TimingStatistic();
             var droppedNode = e.DroppedNodeInformation;
+            Console.WriteLine($"Node {droppedNode.Value} dropped, starting recovery process...");
+
             timing.Start();
+
+            var paths = new ShortestPathsTable();
+
+            foreach (var neighbor in droppedNode.Neighbors)
+            {
+                foreach (var otherNeighbor in neighbor.Neighbors)
+                {
+                    var shortestPath = ShortestPath<DijkstraSearch>(neighbor, otherNeighbor);
+                    paths.AddPath(otherNeighbor.Value, neighbor.Value, shortestPath.CalculatePathCost());
+                }
+            }
+
+            RemoveRedundantEdges(droppedNode.Neighbors, droppedNode.Value);
+            _nodes.RemoveAll(n => n.Value == droppedNode.Value);
             
-            // TODO handle dropped node
+            paths.TrimExcessPaths();
+            FixEdges(paths);
             
             timing.Stop();
             _timings.Add(timing);
+            
+            Console.WriteLine($"Graph recovered in {timing.ElapsedTime}msecs");
+        }
+
+        private void RemoveRedundantEdges(List<Node> neighbors, char droppedNodeValue)
+        {
+            foreach (var node in neighbors)
+            {
+                for (var i = 0; i < node.Edges.Count; ++i)
+                {
+                    if (node.Edges[i].End.Value == droppedNodeValue)
+                    {
+                        node.Edges.RemoveAt(i);
+                    }
+                }                
+            }
+        }
+
+        private void FixEdges(ShortestPathsTable paths)
+        {
+            foreach (var key in paths.PotentialShortestPaths.Keys)
+            {
+                AddEdge(key, paths.PotentialShortestPaths[key][0].Item1, paths.PotentialShortestPaths[key][0].Item2);
+            }
+        }
+
+        public bool KillNode()
+        {
+            var failingNode = CheckForFailingNode();
+
+            if (failingNode == default(Node))
+            {
+                return false;
+            }
+            
+            _bus.PublishAsync(new NodeDroppedEvent(failingNode));
+            return true;
         }
 
         public void PrintGraph()

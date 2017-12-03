@@ -58,6 +58,7 @@
     <Compile Include="SearchAlgorithms\SearchAlgorithm.cs" />
     <Compile Include="Structures\NetworkGraph.cs" />
     <Compile Include="Structures\Node.cs" />
+    <Compile Include="Structures\ShortestPathsTable.cs" />
     <Compile Include="Structures\TimingStatistic.cs" />
     <Compile Include="Structures\WeightedEdge.cs" />
     <Compile Include="Utility.cs" />
