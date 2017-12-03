@@ -14,8 +14,8 @@ namespace SelfHealingNetwork.Structures
         }
 
         public NodeInfo NodeInformation;
-        
-        public TimeSpan ElapsedTime => _endTime - _startTime;
+
+        public int ElapsedTime => (_endTime - _startTime).Milliseconds;
         public void Start() => _startTime = DateTime.Now;
         public void Stop() => _endTime = DateTime.Now;
     }

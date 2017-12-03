@@ -16,7 +16,6 @@ namespace SelfHealingNetwork.SearchAlgorithms
 
             while (priorityQueue.Count > 0)
             {
-                Console.WriteLine("outer");
                 var current = priorityQueue.Dequeue();
 
                 if (current.IsVisited) continue;
@@ -27,7 +26,6 @@ namespace SelfHealingNetwork.SearchAlgorithms
 
                 foreach (var edge in current.Edges)
                 {
-                    Console.WriteLine("inner");
                     var neighbor = edge.End;
                     var newCost = current.Cost + edge.Weight;
                     var neighborCost = neighbor.Cost;
@@ -35,9 +33,17 @@ namespace SelfHealingNetwork.SearchAlgorithms
                     if (newCost > neighborCost) continue;
                         
                     neighbor.Cost = newCost;
-                    parentMap.Add(neighbor, current);
-                    var priority = newCost;
-                    priorityQueue.Enqueue(neighbor, priority);
+                    try
+                    {
+                        parentMap.Add(neighbor, current);
+                        var priority = newCost;
+                        priorityQueue.Enqueue(neighbor, priority);
+                    }
+                    catch(Exception)
+                    {
+                        Console.WriteLine("Tried adding node that already exists. Look into this");
+                    }
+
                 }
             }
             

@@ -117,14 +117,14 @@ namespace SelfHealingNetwork.Structures
             var searchAlgorithm = new TSearchAlgorithm();
             InitializeCosts(start);
             var path = searchAlgorithm.Search(start, end);
-            Console.WriteLine($"FROM: {start.Value} TO: {end.Value} COST: {path.CalculatePathCost()}");
             return path;
         }
 
         private void InitializeCosts(Node start)
         {
             _nodes.ForEach(n => n.Cost = int.MaxValue);
-//            _nodes.ForEach(n => n.IsVisited = false);
+            _nodes.ForEach(n => n.IsVisited = false);
+
             start.Cost = 0;
         }
 
@@ -142,9 +142,14 @@ namespace SelfHealingNetwork.Structures
             {
                 foreach (var otherNeighbor in droppedNode.Neighbors)
                 {
+                    Console.WriteLine($"{neighbor.Value} {otherNeighbor.Value}");
                     if (neighbor == otherNeighbor) continue;
-                    var shortestPath = ShortestPath<DijkstraSearch>(neighbor, otherNeighbor);
-                    paths.AddPath(otherNeighbor.Value, neighbor.Value, shortestPath.CalculatePathCost());
+
+                    if (!EdgeAlreadyExists(neighbor.Value, otherNeighbor.Value))
+                    {
+                        var shortestPath = ShortestPath<DijkstraSearch>(neighbor, otherNeighbor);
+                        paths.AddPath(otherNeighbor.Value, neighbor.Value, shortestPath.CalculatePathCost());
+                    }
                 }
             }
             
@@ -153,11 +158,27 @@ namespace SelfHealingNetwork.Structures
             
             paths.TrimExcessPaths();
             FixEdges(paths);
-            
+
+            PrintGraph();
+
             timing.Stop();
             timing.NodeInformation.NodeName = droppedNode.Value;
             timing.NodeInformation.NumberOfEdges = droppedNode.Edges.Count;
             Console.WriteLine($"Graph recovered in {timing.ElapsedTime}msecs");
+        }
+
+        private bool EdgeAlreadyExists(char value1, char value2)
+        {
+            var index = FindNodeIndexByValue(value1);
+            var index2 = FindNodeIndexByValue(value2);
+
+            if (_nodes[index].Edges.FindIndex(e => e.End.Value == value2) == -1 ||
+               _nodes[index2].Edges.FindIndex(e => e.End.Value == value1) == -1)
+            {
+                return false;
+            }
+
+            return true;
         }
 
         private static void RemoveRedundantEdges(IEnumerable<Node> neighbors, Node droppedNode)
@@ -170,7 +191,10 @@ namespace SelfHealingNetwork.Structures
         {
             foreach (var key in paths.PotentialShortestPaths.Keys)
             {
-                AddEdge(key, paths.PotentialShortestPaths[key][0].Item1, paths.PotentialShortestPaths[key][0].Item2);
+                if (paths.PotentialShortestPaths[key].Count > 0)
+                {
+                    AddEdge(key, paths.PotentialShortestPaths[key][0].Item1, paths.PotentialShortestPaths[key][0].Item2);
+                }
             }
         }
 
@@ -183,8 +207,23 @@ namespace SelfHealingNetwork.Structures
                 return false;
             }
             
-            _bus.Publish(new NodeDroppedEvent(failingNode));
+            //_bus.Publish(new NodeDroppedEvent(failingNode));
+
+            OnNodeDropped(new NodeDroppedEvent(failingNode));
             return true;
+        }
+
+        public bool DebugKillNode(char nodeVal)
+        {
+            var node = FindNodeByValue(nodeVal);
+
+            if (node != default(Node))
+            {
+                OnNodeDropped(new NodeDroppedEvent(node));
+                return true;
+            }
+
+            return false;
         }
 
         public void PrintGraph()
