@@ -5,6 +5,7 @@ using System.Text;
 using SelfHealingNetwork.Interfaces;
 using SelfHealingNetwork.Events;
 using Redbus;
+using SelfHealingNetwork.Xml;
 
 namespace SelfHealingNetwork.Structures
 {
@@ -13,12 +14,14 @@ namespace SelfHealingNetwork.Structures
         private readonly List<Node> _nodes;
         private readonly EventBus _bus;
         private readonly List<SubscriptionToken> _eventTokens;
+        private readonly List<TimingStatistic> _timings;
         
         public NetworkGraph()
         {
             _nodes = new List<Node>();
             _bus = new EventBus();
             _eventTokens = new List<SubscriptionToken> {_bus.Subscribe<NodeDroppedEvent>(OnNodeDropped)};
+            _timings = new List<TimingStatistic>();
         }
 
         public void AddNode(Node node)
@@ -27,16 +30,42 @@ namespace SelfHealingNetwork.Structures
                 _nodes.Add(node);
         }
 
-        public void AddEdge(Node node1, Node node2, int weight)
+        public static NetworkGraph BuildGraphFromXmlGraph(Graph graphData)
         {
-            if (!_nodes.Contains(node1) || !_nodes.Contains(node2)) return;
-            
-            var index = _nodes.FindIndex(x => node1 == x);
+            var graph = new NetworkGraph();
 
-            if (index != -1)
+            foreach (var node in graphData.Nodes)
             {
-                _nodes[index].AddEdge(new WeightedEdge(node1, node2, weight));
+                graph.AddNode(new Node(node.Value));
             }
+
+            foreach (var node in graphData.Nodes)
+            {
+                foreach (var edge in node.Edges)
+                {
+                    graph.AddEdge(node.Value, edge.EdgeTo, edge.Weight);
+                }
+            }
+
+            return graph;
+        }
+
+        private void AddEdge(char nodeValueOne, char nodeValueTwo, int weight)
+        {
+            var n1 = _nodes.Find(n => n.Value == nodeValueOne);
+            var n2 = _nodes.Find(n => n.Value == nodeValueTwo);
+
+            if (n1 == null || n2 == null) return;
+
+            n1.AddEdge(new WeightedEdge(n1, n2, weight));
+        }
+        
+        public void RemoveEdge(Node n1, Node n2)
+        {
+            if (!n1.EdgeExists(n1, n2)) return;
+            
+            n1.Edges.RemoveEdgeBetween(n1, n2);
+            n2.Edges.RemoveEdgeBetween(n2, n1);
         }
         
         public void RemoveNode(Node node) => _nodes.Remove(node);
@@ -96,10 +125,16 @@ namespace SelfHealingNetwork.Structures
             start.Cost = 0;
         }
 
-        private static void OnNodeDropped(NodeDroppedEvent e)
+        private void OnNodeDropped(NodeDroppedEvent e)
         {
+            var timing = new TimingStatistic();
             var droppedNode = e.DroppedNodeInformation;
+            timing.Start();
+            
             // TODO handle dropped node
+            
+            timing.Stop();
+            _timings.Add(timing);
         }
 
         public void PrintGraph()

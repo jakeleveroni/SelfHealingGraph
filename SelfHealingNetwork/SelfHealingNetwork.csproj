@@ -61,9 +61,16 @@
     <Compile Include="Structures\TimingStatistic.cs" />
     <Compile Include="Structures\WeightedEdge.cs" />
     <Compile Include="Utility.cs" />
+    <Compile Include="Xml\Deserializer.cs" />
+    <Compile Include="Xml\Edge.cs" />
+    <Compile Include="Xml\Graph.cs" />
+    <Compile Include="Xml\Node.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Xml\graph.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

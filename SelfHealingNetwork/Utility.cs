@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using SelfHealingNetwork.Structures;
 
 namespace SelfHealingNetwork
 {
@@ -13,6 +14,12 @@ namespace SelfHealingNetwork
             return _nodeVals.Select(letter => new NodeValue(letter)).ToList();
         }
 
+        
+        
+        /*
+         * Extension Methods
+        */
+        
         public static NodeValue Next(this List<NodeValue> l)
         {
             var rng = new Random();
@@ -27,6 +34,12 @@ namespace SelfHealingNetwork
                 l.RemoveAt(index);
                 return val;
             }
+        }
+
+        public static void RemoveEdgeBetween(this List<WeightedEdge> l, Node n1, Node n2)
+        {
+            var index = l.FindIndex(e => e.Start == n1 && e.End == n2);
+            l.RemoveAt(index);
         }
     }
 

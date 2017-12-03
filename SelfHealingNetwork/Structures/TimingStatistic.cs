@@ -14,15 +14,7 @@ namespace SelfHealingNetwork.Structures
         }
         
         public TimeSpan ElapsedTime => _endTime - _startTime;
-
-        public void Start()
-        {
-            _startTime = DateTime.Now;
-        }
-
-        public void Stop()
-        {
-            _endTime = DateTime.Now;
-        }
+        public void Start() => _startTime = DateTime.Now;
+        public void Stop() => _endTime = DateTime.Now;
     }
 }

@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Graph xmlns="SelfHealingGraph">
+    <Node Value="A">
+        <Edge EdgeTo="B" Weight="11"></Edge>
+        <Edge EdgeTo="C" Weight="4"></Edge>
+        <Edge EdgeTo="D" Weight="4"></Edge>
+    </Node>
+    <Node Value="B">
+        <Edge EdgeTo="A" Weight="8"></Edge>
+        <Edge EdgeTo="C" Weight="5"></Edge>
+    </Node>
+    <Node Value="C">
+        <Edge EdgeTo="A" Weight="9"></Edge>
+        <Edge EdgeTo="B" Weight="2"></Edge>
+    </Node>
+    <Node Value="D">
+        <Edge EdgeTo="A" Weight="5"></Edge>
+        <Edge EdgeTo="D" Weight="1"></Edge>
+    </Node>
+    <Node Value="E">
+        <Edge EdgeTo="F" Weight="12"></Edge>
+        <Edge EdgeTo="D" Weight="3"></Edge>
+    </Node>
+    <Node Value="F">
+        <Edge EdgeTo="E" Weight="6"></Edge>
+    </Node>
+</Graph>
