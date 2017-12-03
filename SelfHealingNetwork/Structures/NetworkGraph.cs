@@ -1,11 +1,7 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.ComponentModel.Design;
-using System.Configuration;
 using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using SelfHealingNetwork.Interfaces;
 using SelfHealingNetwork.Events;
 using Redbus;
@@ -19,26 +15,20 @@ namespace SelfHealingNetwork.Structures
         private readonly List<Node> _nodes;
         private readonly EventBus _bus;
         private readonly List<SubscriptionToken> _eventTokens;
-        private readonly List<TimingStatistic> _timings;
-        
-        public NetworkGraph()
+
+        private NetworkGraph()
         {
             _nodes = new List<Node>();
             _bus = new EventBus();
             _eventTokens = new List<SubscriptionToken> {_bus.Subscribe<NodeDroppedEvent>(OnNodeDropped)};
-            _timings = new List<TimingStatistic>();
         }
 
-        public void AddNode(Node node)
+        private void AddNode(Node node)
         {
             if (!_nodes.Contains(node))
                 _nodes.Add(node);
         }
 
-        public Node FindNodeByValue(char value)
-        {
-            return _nodes.Find(n => n.Value == value);
-        }
 
         public static NetworkGraph BuildGraphFromXmlGraph(Graph graphData)
         {
@@ -69,8 +59,8 @@ namespace SelfHealingNetwork.Structures
 
             n1.AddEdge(new WeightedEdge(n1, n2, weight));
         }
-        
-        public void RemoveEdge(Node n1, Node n2)
+
+        private static void RemoveEdge(Node n1, Node n2)
         {
             if (!n1.EdgeExists(n1, n2)) return;
             
@@ -120,9 +110,9 @@ namespace SelfHealingNetwork.Structures
 
             return true;
         }
-        
 
-        public List<Node> ShortestPath<TSearchAlgorithm>(Node start, Node end) where TSearchAlgorithm : ISearchAlgorithm, new()
+
+        private IEnumerable<Node> ShortestPath<TSearchAlgorithm>(Node start, Node end) where TSearchAlgorithm : ISearchAlgorithm, new()
         {
             var searchAlgorithm = new TSearchAlgorithm();
             InitializeCosts(start);
@@ -154,30 +144,22 @@ namespace SelfHealingNetwork.Structures
                 }
             }
 
-            RemoveRedundantEdges(droppedNode.Neighbors, droppedNode.Value);
+            RemoveRedundantEdges(droppedNode.Neighbors, droppedNode);
             _nodes.RemoveAll(n => n.Value == droppedNode.Value);
             
             paths.TrimExcessPaths();
             FixEdges(paths);
             
             timing.Stop();
-            _timings.Add(timing);
-            
+            timing.NodeInformation.NodeName = droppedNode.Value;
+            timing.NodeInformation.NumberOfEdges = droppedNode.Edges.Count;
             Console.WriteLine($"Graph recovered in {timing.ElapsedTime}msecs");
         }
 
-        private void RemoveRedundantEdges(List<Node> neighbors, char droppedNodeValue)
+        private static void RemoveRedundantEdges(IEnumerable<Node> neighbors, Node droppedNode)
         {
             foreach (var node in neighbors)
-            {
-                for (var i = 0; i < node.Edges.Count; ++i)
-                {
-                    if (node.Edges[i].End.Value == droppedNodeValue)
-                    {
-                        node.Edges.RemoveAt(i);
-                    }
-                }                
-            }
+                RemoveEdge(node, droppedNode);
         }
 
         private void FixEdges(ShortestPathsTable paths)
@@ -218,8 +200,9 @@ namespace SelfHealingNetwork.Structures
             Console.WriteLine(builder.ToString());
         }
 
-        public Node CheckForFailingNode() =>_nodes.FirstOrDefault(node => node.WillFail());
+        private Node CheckForFailingNode() =>_nodes.FirstOrDefault(node => node.WillFail());
         private int FindNodeIndexByValue(char val) => _nodes.FindIndex(n => n.Value == val);
+        public Node FindNodeByValue(char value) =>  _nodes.Find(n => n.Value == value);
         public void Dispose() => _eventTokens.ForEach(t => _bus.Unsubscribe(t));    
     }
 }

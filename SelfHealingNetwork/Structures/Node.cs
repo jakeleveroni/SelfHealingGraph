@@ -11,9 +11,9 @@ namespace SelfHealingNetwork.Structures
         public readonly List<Node> Neighbors;
         public readonly List<WeightedEdge> Edges;
         public char Value { get; }
-        private static readonly EventBus _bus = new EventBus();
-        public int FailureProbability;
-        private static Random _rng = new Random();
+        private static readonly EventBus Bus = new EventBus();
+        private readonly int _failureProbability;
+        private static readonly Random Rng = new Random();
         
         public bool IsVisited { get; set; }
         public double Cost { get; set; }
@@ -24,16 +24,7 @@ namespace SelfHealingNetwork.Structures
             IsVisited = false;
             Neighbors = new List<Node>();
             Edges = new List<WeightedEdge>();
-            FailureProbability = _rng.Next(1, 101);
-        }
-
-        public Node(char value, List<Node> neighbors)
-        {
-            Value = value;
-            IsVisited = false;
-            Neighbors = neighbors;
-            Edges = new List<WeightedEdge>();
-            FailureProbability = _rng.Next(1, 101);
+            _failureProbability = Rng.Next(1, 101);
         }
 
         public override string ToString()
@@ -43,7 +34,7 @@ namespace SelfHealingNetwork.Structures
             return s.ToString();
         }
 
-        public bool WillFail() => _rng.Next(1, 101) < FailureProbability;       
+        public bool WillFail() => Rng.Next(1, 101) < _failureProbability;       
         public void AddNeighbor(Node node) => Neighbors?.Add(node);
 
         public void AddEdge(WeightedEdge edge)
@@ -62,7 +53,7 @@ namespace SelfHealingNetwork.Structures
 
         public void Dispose()
         {
-            _bus.Publish(new NodeDroppedEvent(this));
+            Bus.Publish(new NodeDroppedEvent(this));
         }
     }
 }

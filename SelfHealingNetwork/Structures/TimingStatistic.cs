@@ -9,9 +9,11 @@ namespace SelfHealingNetwork.Structures
 
         public struct NodeInfo
         {
-            public string NodeName;
+            public char NodeName;
             public int NumberOfEdges;
         }
+
+        public NodeInfo NodeInformation;
         
         public TimeSpan ElapsedTime => _endTime - _startTime;
         public void Start() => _startTime = DateTime.Now;

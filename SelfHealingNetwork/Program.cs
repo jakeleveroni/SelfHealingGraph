@@ -14,6 +14,7 @@ namespace SelfHealingNetwork
             var graphData = deser.LoadGraph();
 
             var graph = NetworkGraph.BuildGraphFromXmlGraph(graphData);
+            graph.PrintGraph();
             
             while (true)
             {

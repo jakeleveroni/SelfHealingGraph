@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data.Common;
-using System.Runtime.InteropServices;
-using System.Threading.Tasks;
 
 namespace SelfHealingNetwork.Structures
 {
@@ -21,20 +18,10 @@ namespace SelfHealingNetwork.Structures
             {
                 PotentialShortestPaths[source].Add(Tuple.Create(dest, weight));
             }
-            catch (Exception e)
+            catch (Exception)
             {
                 PotentialShortestPaths.Add(source, new List<Tuple<char, int>>() { Tuple.Create(dest, weight)});  
             }
-        }
-
-        public void RemovePath(char src, char dest, int weight)
-        {
-            var index = PotentialShortestPaths[src].FindIndex(p => p.Item1 == dest && p.Item2 == weight);
-
-            if (index == -1)
-                return;
-            
-            PotentialShortestPaths[src].RemoveAt(index);
         }
 
         public void TrimExcessPaths()
