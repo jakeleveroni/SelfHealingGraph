@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace SelfHealingNetwork.Structures
 {
@@ -31,13 +32,7 @@ namespace SelfHealingNetwork.Structures
             
             foreach (var key in keys)
             {
-                foreach (var path in PotentialShortestPaths[key])
-                {
-                    if (path.Item2 < shortest)
-                    {
-                        shortest = path.Item2;                        
-                    }
-                }
+                shortest = PotentialShortestPaths[key].Select(path => path.Item2).Concat(new[] {shortest}).Min();
 
                 PotentialShortestPaths[key].RemoveAll(n => n.Item2 != shortest);
                 

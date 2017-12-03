@@ -19,7 +19,6 @@ namespace SelfHealingNetwork
         /*
          * Extension Methods
         */
-        
         public static NodeValue Next(this List<NodeValue> l)
         {
             var rng = new Random();

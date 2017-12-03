@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using SelfHealingNetwork.Interfaces;
+﻿using System;
+using System.Collections.Generic;
 using SelfHealingNetwork.Structures;
 using ConcurrentPriorityQueue;
 
@@ -16,24 +16,23 @@ namespace SelfHealingNetwork.SearchAlgorithms
 
             while (priorityQueue.Count > 0)
             {
+                Console.WriteLine("outer");
                 var current = priorityQueue.Dequeue();
 
-                if (current.IsVisited) 
-                    continue;
+                if (current.IsVisited) continue;
                 
                 current.IsVisited = true;
 
-                if (current.Equals(end))
-                    break;
+                if (current.Equals(end)) break;
 
                 foreach (var edge in current.Edges)
                 {
+                    Console.WriteLine("inner");
                     var neighbor = edge.End;
                     var newCost = current.Cost + edge.Weight;
                     var neighborCost = neighbor.Cost;
 
-                    if (newCost > neighborCost) 
-                        continue;
+                    if (newCost > neighborCost) continue;
                         
                     neighbor.Cost = newCost;
                     parentMap.Add(neighbor, current);

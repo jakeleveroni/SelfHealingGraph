@@ -116,12 +116,15 @@ namespace SelfHealingNetwork.Structures
         {
             var searchAlgorithm = new TSearchAlgorithm();
             InitializeCosts(start);
-            return searchAlgorithm.Search(start, end);      
+            var path = searchAlgorithm.Search(start, end);
+            Console.WriteLine($"FROM: {start.Value} TO: {end.Value} COST: {path.CalculatePathCost()}");
+            return path;
         }
 
         private void InitializeCosts(Node start)
         {
             _nodes.ForEach(n => n.Cost = int.MaxValue);
+//            _nodes.ForEach(n => n.IsVisited = false);
             start.Cost = 0;
         }
 
@@ -130,20 +133,21 @@ namespace SelfHealingNetwork.Structures
             var timing = new TimingStatistic();
             var droppedNode = e.DroppedNodeInformation;
             Console.WriteLine($"Node {droppedNode.Value} dropped, starting recovery process...");
-
+            
             timing.Start();
 
             var paths = new ShortestPathsTable();
-
+            
             foreach (var neighbor in droppedNode.Neighbors)
             {
-                foreach (var otherNeighbor in neighbor.Neighbors)
+                foreach (var otherNeighbor in droppedNode.Neighbors)
                 {
+                    if (neighbor == otherNeighbor) continue;
                     var shortestPath = ShortestPath<DijkstraSearch>(neighbor, otherNeighbor);
                     paths.AddPath(otherNeighbor.Value, neighbor.Value, shortestPath.CalculatePathCost());
                 }
             }
-
+            
             RemoveRedundantEdges(droppedNode.Neighbors, droppedNode);
             _nodes.RemoveAll(n => n.Value == droppedNode.Value);
             
@@ -179,7 +183,7 @@ namespace SelfHealingNetwork.Structures
                 return false;
             }
             
-            _bus.PublishAsync(new NodeDroppedEvent(failingNode));
+            _bus.Publish(new NodeDroppedEvent(failingNode));
             return true;
         }
 
