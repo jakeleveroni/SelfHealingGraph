@@ -12,19 +12,25 @@ namespace SelfHealingNetwork
             
         public static void Main(string[] args)
         {
-            var deser = new Deserializer();
-            var graphData = deser.LoadGraph();
-
-            //_graph = NetworkGraph.BuildGraphFromXmlGraph(graphData);
             _graph = new NetworkGraph();
-            _graph.GenerateNetworkGraph(Utility.MaxNodes, 150);
 
-            //var programTimer = new Timer(10000);
-            //programTimer.Elapsed += OnTimedEvent;
-            //programTimer.Enabled = true;
 
-            //_graph.KillNode();
-            //_graph.DebugKillNode('F');
+            if (args[0] == "gen")
+            {
+                _graph.GenerateNetworkGraph(Utility.MaxNodes, 100);
+
+            }
+            else if (args[0] == "xml" || args.Length == 0)
+            {
+                var deser = new Deserializer();
+                var graphData = deser.LoadGraph();
+                _graph = NetworkGraph.BuildGraphFromXmlGraph(graphData);
+            }
+            else
+            {
+                Console.WriteLine("Invalid command line argument valid options are: 'gen', 'xml', and ''");
+                return;
+            }
 
             while (true)
             {
