@@ -3,10 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="7decc073-e9ec-48b9-8806-99258045e928" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/.idea.SelfHealingNetwork/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/.idea.SelfHealingNetwork/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SelfHealingNetwork/Program.cs" afterPath="$PROJECT_DIR$/SelfHealingNetwork/Program.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SelfHealingNetwork/SearchAlgorithms/DijkstraSearch.cs" afterPath="$PROJECT_DIR$/SelfHealingNetwork/SearchAlgorithms/DijkstraSearch.cs" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SelfHealingNetwork/SearchAlgorithms/SearchAlgorithm.cs" afterPath="$PROJECT_DIR$/SelfHealingNetwork/SearchAlgorithms/SearchAlgorithm.cs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SelfHealingNetwork/Structures/NetworkGraph.cs" afterPath="$PROJECT_DIR$/SelfHealingNetwork/Structures/NetworkGraph.cs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SelfHealingNetwork/Structures/TimingStatistic.cs" afterPath="$PROJECT_DIR$/SelfHealingNetwork/Structures/TimingStatistic.cs" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,31 +21,11 @@
       <file leaf-file-name="NetworkGraph.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/NetworkGraph.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="387">
-              <caret line="128" column="27" lean-forward="false" selection-start-line="128" selection-start-column="27" selection-end-line="128" selection-end-column="27" />
+            <state relative-caret-position="1980">
+              <caret line="132" column="27" lean-forward="false" selection-start-line="132" selection-start-column="27" selection-end-line="132" selection-end-column="27" />
               <folding>
-                <marker date="1512338662000" expanded="true" signature="6:242" ph="..." />
-                <marker date="1512338662000" expanded="true" signature="283:8326" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="329:8324" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="514:714" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="755:849" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="926:1386" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="1031:1112" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="1163:1349" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="1226:1335" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="1466:1724" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="1782:1959" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="2108:3401" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="2306:2428" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="2485:3365" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="2661:3019" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="2916:3001" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="3539:3841" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="3891:3958" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="7451:7463" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="7497:7958" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="7605:7884" ph="{...}" />
-                <marker date="1512338662000" expanded="true" signature="7735:7870" ph="{...}" />
+                <marker date="1512587236000" expanded="true" signature="6:162" ph="..." />
+                <marker date="1512587236000" expanded="true" signature="8792:8798" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -53,17 +34,17 @@
       <file leaf-file-name="DijkstraSearch.cs" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/SearchAlgorithms/DijkstraSearch.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
+            <state relative-caret-position="394">
+              <caret line="34" column="42" lean-forward="false" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
               <folding>
-                <marker date="1512338510000" expanded="true" signature="6:115" ph="..." />
-                <marker date="1512338510000" expanded="true" signature="162:1662" ph="{...}" />
-                <marker date="1512338510000" expanded="true" signature="214:1660" ph="{...}" />
-                <marker date="1512338510000" expanded="true" signature="284:1654" ph="{...}" />
-                <marker date="1512338510000" expanded="true" signature="529:1572" ph="{...}" />
-                <marker date="1512338510000" expanded="true" signature="809:1558" ph="{...}" />
-                <marker date="1512338510000" expanded="true" signature="1141:1358" ph="{...}" />
-                <marker date="1512338510000" expanded="true" signature="1395:1539" ph="{...}" />
+                <marker date="1512586154000" expanded="false" signature="6:115" ph="..." />
+                <marker date="1512586154000" expanded="true" signature="162:1666" ph="{...}" />
+                <marker date="1512586154000" expanded="true" signature="214:1664" ph="{...}" />
+                <marker date="1512586154000" expanded="true" signature="284:1658" ph="{...}" />
+                <marker date="1512586154000" expanded="true" signature="529:1576" ph="{...}" />
+                <marker date="1512586154000" expanded="true" signature="811:1562" ph="{...}" />
+                <marker date="1512586154000" expanded="true" signature="1143:1360" ph="{...}" />
+                <marker date="1512586154000" expanded="true" signature="1397:1543" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -72,15 +53,9 @@
       <file leaf-file-name="SearchAlgorithm.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/SearchAlgorithms/SearchAlgorithm.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="315">
+            <state relative-caret-position="345">
               <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-              <folding>
-                <marker date="1512242552000" expanded="false" signature="6:107" ph="..." />
-                <marker date="1512242552000" expanded="true" signature="154:748" ph="{...}" />
-                <marker date="1512242552000" expanded="true" signature="217:746" ph="{...}" />
-                <marker date="1512242552000" expanded="true" signature="405:740" ph="{...}" />
-                <marker date="1512242552000" expanded="true" signature="525:634" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -90,18 +65,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="630">
               <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
-              <folding>
-                <marker date="1512333740000" expanded="true" signature="6:66" ph="..." />
-                <marker date="1512333740000" expanded="true" signature="107:1460" ph="{...}" />
-                <marker date="1512333740000" expanded="true" signature="145:1458" ph="{...}" />
-                <marker date="1512333740000" expanded="true" signature="277:382" ph="{...}" />
-                <marker date="1512333740000" expanded="true" signature="447:763" ph="{...}" />
-                <marker date="1512333740000" expanded="true" signature="473:581" ph="{...}" />
-                <marker date="1512333740000" expanded="true" signature="611:753" ph="{...}" />
-                <marker date="1512333740000" expanded="true" signature="802:1452" ph="{...}" />
-                <marker date="1512333740000" expanded="true" signature="956:1442" ph="{...}" />
-                <marker date="1512333740000" expanded="true" signature="1293:1428" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -111,18 +75,7 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="300">
               <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-              <folding>
-                <marker date="1512333712000" expanded="true" signature="6:103" ph="..." />
-                <marker date="1512333712000" expanded="true" signature="133:1402" ph="{...}" />
-                <marker date="1512333712000" expanded="true" signature="167:1180" ph="{...}" />
-                <marker date="1512333712000" expanded="true" signature="307:406" ph="{...}" />
-                <marker date="1512333712000" expanded="true" signature="434:476" ph="/* Extension Methods ... */" />
-                <marker date="1512333712000" expanded="true" signature="537:860" ph="{...}" />
-                <marker date="1512333712000" expanded="true" signature="609:850" ph="{...}" />
-                <marker date="1512333712000" expanded="true" signature="1051:1174" ph="{...}" />
-                <marker date="1512333712000" expanded="true" signature="1208:1400" ph="{...}" />
-                <marker date="1512333712000" expanded="true" signature="1322:1394" ph="{...}" />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -131,12 +84,8 @@
         <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/TimingStatistic.cs">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="90">
-              <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-              <folding>
-                <marker date="1512338138000" expanded="true" signature="54:527" ph="{...}" />
-                <marker date="1512338138000" expanded="true" signature="89:525" ph="{...}" />
-                <marker date="1512338138000" expanded="true" signature="199:291" ph="{...}" />
-              </folding>
+              <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -144,15 +93,9 @@
       <file leaf-file-name="Program.cs" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Program.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="31" column="75" lean-forward="false" selection-start-line="31" selection-start-column="75" selection-end-line="31" selection-end-column="75" />
-              <folding>
-                <marker date="1512338439000" expanded="true" signature="6:159" ph="..." />
-                <marker date="1512338439000" expanded="true" signature="189:957" ph="{...}" />
-                <marker date="1512338439000" expanded="true" signature="218:955" ph="{...}" />
-                <marker date="1512338439000" expanded="true" signature="328:812" ph="{...}" />
-                <marker date="1512338439000" expanded="true" signature="889:940" ph="{...}" />
-              </folding>
+            <state relative-caret-position="465">
+              <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -214,10 +157,10 @@
         <option value="$PROJECT_DIR$/SelfHealingNetwork/Structures/TimingStatistic.cs" />
         <option value="$PROJECT_DIR$/SelfHealingNetwork/Utility.cs" />
         <option value="$PROJECT_DIR$/SelfHealingNetwork/Structures/ShortestPathsTable.cs" />
-        <option value="$PROJECT_DIR$/SelfHealingNetwork/Structures/NetworkGraph.cs" />
         <option value="$PROJECT_DIR$/SelfHealingNetwork/ProgramLoop.cs" />
         <option value="$PROJECT_DIR$/SelfHealingNetwork/Program.cs" />
         <option value="$PROJECT_DIR$/SelfHealingNetwork/SearchAlgorithms/DijkstraSearch.cs" />
+        <option value="$PROJECT_DIR$/SelfHealingNetwork/Structures/NetworkGraph.cs" />
       </list>
     </option>
   </component>
@@ -261,42 +204,6 @@
               <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
               <item name="SelfHealingNetwork (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
               <item name="SelfHealingNetwork" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="SelfHealingNetwork (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="SelfHealingNetwork" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Events" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="SelfHealingNetwork (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="SelfHealingNetwork" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Interfaces" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="SelfHealingNetwork (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="SelfHealingNetwork" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Properties" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="SelfHealingNetwork (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="SelfHealingNetwork" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="SearchAlgorithms" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="SelfHealingNetwork (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="SelfHealingNetwork" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Structures" type="977d5f41:SolutionExplorerNodeRider" />
-            </path>
-            <path>
-              <item name="" type="13324e5d:SolutionExplorerViewPane$ProjectViewPaneTreeStructure$createRoot$1" />
-              <item name="SelfHealingNetwork (1 project)" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="SelfHealingNetwork" type="977d5f41:SolutionExplorerNodeRider" />
-              <item name="Xml" type="977d5f41:SolutionExplorerNodeRider" />
             </path>
           </expand>
           <select />
@@ -348,6 +255,7 @@
       <updated>1511061759103</updated>
       <workItem from="1511061760293" duration="12961000" />
       <workItem from="1512112075594" duration="20410000" />
+      <workItem from="1512600803894" duration="185000" />
     </task>
     <task id="LOCAL-00001" summary="removed template, added timing statistics and utility, added logging and graph generation">
       <created>1512244015116</created>
@@ -395,7 +303,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="33371000" />
+    <option name="totallyTimeSpent" value="33556000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -416,11 +324,9 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991013" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991013" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3491656" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.31922612" sideWeight="0.49722221" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1881259" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991013" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="NuGet" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.31835687" sideWeight="0.49722221" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19027181" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3992298" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
@@ -429,7 +335,9 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32991013" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection Results" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32917705" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -479,213 +387,20 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/NetworkGraph.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="1980">
+          <caret line="132" column="27" lean-forward="false" selection-start-line="132" selection-start-column="27" selection-end-line="132" selection-end-column="27" />
           <folding>
-            <marker date="1512338662000" expanded="true" signature="6:242" ph="..." />
-            <marker date="1512338662000" expanded="true" signature="283:8326" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="329:8324" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="514:714" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="755:849" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="926:1386" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="1031:1112" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="1163:1349" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="1226:1335" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="1466:1724" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="1782:1959" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="2108:3401" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="2306:2428" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="2485:3365" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="2661:3019" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="2916:3001" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="3539:3841" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="3891:3958" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="7451:7463" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="7497:7958" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="7605:7884" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="7735:7870" ph="{...}" />
+            <marker date="1512587236000" expanded="true" signature="6:162" ph="..." />
+            <marker date="1512587236000" expanded="true" signature="8792:8798" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/WeightedEdge.cs">
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/SearchAlgorithms/SearchAlgorithm.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
-          <folding>
-            <marker date="1512242440000" expanded="true" signature="59:706" ph="{...}" />
-            <marker date="1512242440000" expanded="true" signature="91:704" ph="{...}" />
-            <marker date="1512242440000" expanded="true" signature="263:431" ph="{...}" />
-            <marker date="1512242440000" expanded="true" signature="476:545" ph="{...}" />
-            <marker date="1512242440000" expanded="true" signature="596:698" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/Node.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
-          <folding>
-            <marker date="1512333439000" expanded="false" signature="6:113" ph="..." />
-            <marker date="1512333439000" expanded="true" signature="154:1676" ph="{...}" />
-            <marker date="1512333439000" expanded="true" signature="192:1674" ph="{...}" />
-            <marker date="1512333439000" expanded="true" signature="628:846" ph="{...}" />
-            <marker date="1512333439000" expanded="true" signature="889:1055" ph="{...}" />
-            <marker date="1512333439000" expanded="true" signature="1253:1374" ph="{...}" />
-            <marker date="1512333439000" expanded="true" signature="1302:1364" ph="{...}" />
-            <marker date="1512333439000" expanded="true" signature="1424:1564" ph="{...}" />
-            <marker date="1512333439000" expanded="true" signature="1595:1668" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/Edge.cs" />
-    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Events/EventBus.cs" />
-    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Interfaces/ISearchAlgorithm.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
-          <folding>
-            <marker date="1512242541000" expanded="false" signature="6:70" ph="..." />
-            <marker date="1512242541000" expanded="true" signature="111:214" ph="{...}" />
-            <marker date="1512242541000" expanded="true" signature="151:212" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Events/NodeDroppedEvent.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-          <folding>
-            <marker date="1512242651000" expanded="false" signature="6:57" ph="..." />
-            <marker date="1512242651000" expanded="true" signature="94:310" ph="{...}" />
-            <marker date="1512242651000" expanded="true" signature="142:308" ph="{...}" />
-            <marker date="1512242651000" expanded="true" signature="242:302" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Xml/Deserializer.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding>
-            <marker date="1512257700000" expanded="true" signature="6:62" ph="..." />
-            <marker date="1512257700000" expanded="true" signature="96:817" ph="{...}" />
-            <marker date="1512257700000" expanded="true" signature="128:815" ph="{...}" />
-            <marker date="1512257700000" expanded="true" signature="230:809" ph="{...}" />
-            <marker date="1512257700000" expanded="true" signature="443:768" ph="{...}" />
-            <marker date="1512257700000" expanded="true" signature="477:579" ph="{...}" />
-            <marker date="1512257700000" expanded="true" signature="615:754" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Xml/Graph.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
-          <folding>
-            <marker date="1512258371000" expanded="true" signature="6:65" ph="..." />
-            <marker date="1512258371000" expanded="true" signature="99:283" ph="{...}" />
-            <marker date="1512258371000" expanded="true" signature="193:281" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Xml/Edge.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
-          <folding>
-            <marker date="1512258671000" expanded="true" signature="65:295" ph="{...}" />
-            <marker date="1512258671000" expanded="true" signature="89:293" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Xml/Node.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
-          <folding>
-            <marker date="1512258645000" expanded="true" signature="6:65" ph="..." />
-            <marker date="1512258645000" expanded="true" signature="99:329" ph="{...}" />
-            <marker date="1512258645000" expanded="true" signature="123:327" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/WeightedEdge.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="182">
-          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
-          <folding>
-            <marker date="1512242440000" expanded="true" signature="59:706" ph="{...}" />
-            <marker date="1512242440000" expanded="true" signature="91:704" ph="{...}" />
-            <marker date="1512242440000" expanded="true" signature="263:431" ph="{...}" />
-            <marker date="1512242440000" expanded="true" signature="476:545" ph="{...}" />
-            <marker date="1512242440000" expanded="true" signature="596:698" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/Node.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="27" column="9" lean-forward="false" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
-          <folding>
-            <marker date="1512333439000" expanded="false" signature="6:113" ph="..." />
-            <marker date="1512333439000" expanded="true" signature="154:1676" ph="{...}" />
-            <marker date="1512333439000" expanded="true" signature="192:1674" ph="{...}" />
-            <marker date="1512333439000" expanded="true" signature="628:846" ph="{...}" />
-            <marker date="1512333439000" expanded="true" signature="889:1055" ph="{...}" />
-            <marker date="1512333439000" expanded="true" signature="1253:1374" ph="{...}" />
-            <marker date="1512333439000" expanded="true" signature="1302:1364" ph="{...}" />
-            <marker date="1512333439000" expanded="true" signature="1424:1564" ph="{...}" />
-            <marker date="1512333439000" expanded="true" signature="1595:1668" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Xml/graph.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="495">
-          <caret line="33" column="20" lean-forward="true" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+        <state relative-caret-position="345">
+          <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/TimingStatistic.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="36" lean-forward="false" selection-start-line="6" selection-start-column="36" selection-end-line="6" selection-end-column="36" />
-          <folding>
-            <marker date="1512338138000" expanded="true" signature="54:527" ph="{...}" />
-            <marker date="1512338138000" expanded="true" signature="89:525" ph="{...}" />
-            <marker date="1512338138000" expanded="true" signature="199:291" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Utility.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
-          <folding>
-            <marker date="1512333712000" expanded="true" signature="6:103" ph="..." />
-            <marker date="1512333712000" expanded="true" signature="133:1402" ph="{...}" />
-            <marker date="1512333712000" expanded="true" signature="167:1180" ph="{...}" />
-            <marker date="1512333712000" expanded="true" signature="307:406" ph="{...}" />
-            <marker date="1512333712000" expanded="true" signature="434:476" ph="/* Extension Methods ... */" />
-            <marker date="1512333712000" expanded="true" signature="537:860" ph="{...}" />
-            <marker date="1512333712000" expanded="true" signature="609:850" ph="{...}" />
-            <marker date="1512333712000" expanded="true" signature="1051:1174" ph="{...}" />
-            <marker date="1512333712000" expanded="true" signature="1208:1400" ph="{...}" />
-            <marker date="1512333712000" expanded="true" signature="1322:1394" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -693,84 +408,30 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="630">
           <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
-          <folding>
-            <marker date="1512333740000" expanded="true" signature="6:66" ph="..." />
-            <marker date="1512333740000" expanded="true" signature="107:1460" ph="{...}" />
-            <marker date="1512333740000" expanded="true" signature="145:1458" ph="{...}" />
-            <marker date="1512333740000" expanded="true" signature="277:382" ph="{...}" />
-            <marker date="1512333740000" expanded="true" signature="447:763" ph="{...}" />
-            <marker date="1512333740000" expanded="true" signature="473:581" ph="{...}" />
-            <marker date="1512333740000" expanded="true" signature="611:753" ph="{...}" />
-            <marker date="1512333740000" expanded="true" signature="802:1452" ph="{...}" />
-            <marker date="1512333740000" expanded="true" signature="956:1442" ph="{...}" />
-            <marker date="1512333740000" expanded="true" signature="1293:1428" ph="{...}" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/NetworkGraph.cs">
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Utility.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="387">
-          <caret line="128" column="27" lean-forward="false" selection-start-line="128" selection-start-column="27" selection-end-line="128" selection-end-column="27" />
-          <folding>
-            <marker date="1512338662000" expanded="true" signature="6:242" ph="..." />
-            <marker date="1512338662000" expanded="true" signature="283:8326" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="329:8324" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="514:714" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="755:849" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="926:1386" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="1031:1112" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="1163:1349" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="1226:1335" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="1466:1724" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="1782:1959" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="2108:3401" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="2306:2428" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="2485:3365" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="2661:3019" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="2916:3001" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="3539:3841" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="3891:3958" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="7451:7463" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="7497:7958" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="7605:7884" ph="{...}" />
-            <marker date="1512338662000" expanded="true" signature="7735:7870" ph="{...}" />
-          </folding>
+        <state relative-caret-position="300">
+          <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/TimingStatistic.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="22" lean-forward="true" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="31" column="75" lean-forward="false" selection-start-line="31" selection-start-column="75" selection-end-line="31" selection-end-column="75" />
-          <folding>
-            <marker date="1512338439000" expanded="true" signature="6:159" ph="..." />
-            <marker date="1512338439000" expanded="true" signature="189:957" ph="{...}" />
-            <marker date="1512338439000" expanded="true" signature="218:955" ph="{...}" />
-            <marker date="1512338439000" expanded="true" signature="328:812" ph="{...}" />
-            <marker date="1512338439000" expanded="true" signature="889:940" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/SearchAlgorithms/SearchAlgorithm.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-          <folding>
-            <marker date="1512242552000" expanded="false" signature="6:107" ph="..." />
-            <marker date="1512242552000" expanded="true" signature="154:748" ph="{...}" />
-            <marker date="1512242552000" expanded="true" signature="217:746" ph="{...}" />
-            <marker date="1512242552000" expanded="true" signature="405:740" ph="{...}" />
-            <marker date="1512242552000" expanded="true" signature="525:634" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/ProgramLoop.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
+        <state relative-caret-position="465">
+          <caret line="31" column="35" lean-forward="true" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
           <folding />
         </state>
       </provider>
@@ -780,14 +441,173 @@
         <state relative-caret-position="285">
           <caret line="19" column="0" lean-forward="true" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
           <folding>
-            <marker date="1512338510000" expanded="true" signature="6:115" ph="..." />
-            <marker date="1512338510000" expanded="true" signature="162:1662" ph="{...}" />
-            <marker date="1512338510000" expanded="true" signature="214:1660" ph="{...}" />
-            <marker date="1512338510000" expanded="true" signature="284:1654" ph="{...}" />
-            <marker date="1512338510000" expanded="true" signature="529:1572" ph="{...}" />
-            <marker date="1512338510000" expanded="true" signature="809:1558" ph="{...}" />
-            <marker date="1512338510000" expanded="true" signature="1141:1358" ph="{...}" />
-            <marker date="1512338510000" expanded="true" signature="1395:1539" ph="{...}" />
+            <marker date="1512586154000" expanded="false" signature="6:115" ph="..." />
+            <marker date="1512586154000" expanded="true" signature="162:1666" ph="{...}" />
+            <marker date="1512586154000" expanded="true" signature="214:1664" ph="{...}" />
+            <marker date="1512586154000" expanded="true" signature="284:1658" ph="{...}" />
+            <marker date="1512586154000" expanded="true" signature="529:1576" ph="{...}" />
+            <marker date="1512586154000" expanded="true" signature="811:1562" ph="{...}" />
+            <marker date="1512586154000" expanded="true" signature="1143:1360" ph="{...}" />
+            <marker date="1512586154000" expanded="true" signature="1397:1543" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/NetworkGraph.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <marker date="1512587236000" expanded="true" signature="6:162" ph="..." />
+            <marker date="1512587236000" expanded="true" signature="8792:8798" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/WeightedEdge.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="35" lean-forward="false" selection-start-line="8" selection-start-column="35" selection-end-line="8" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/Node.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="0" lean-forward="false" selection-start-line="2" selection-start-column="0" selection-end-line="2" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/Edge.cs" />
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Events/EventBus.cs" />
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Interfaces/ISearchAlgorithm.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Events/NodeDroppedEvent.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="33" lean-forward="false" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Xml/Deserializer.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" lean-forward="false" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Xml/Graph.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="5" lean-forward="false" selection-start-line="10" selection-start-column="5" selection-end-line="10" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Xml/Edge.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="5" lean-forward="false" selection-start-line="5" selection-start-column="5" selection-end-line="5" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Xml/Node.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="41" lean-forward="false" selection-start-line="8" selection-start-column="41" selection-end-line="8" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/WeightedEdge.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="182">
+          <caret line="14" column="23" lean-forward="false" selection-start-line="14" selection-start-column="23" selection-end-line="14" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/Node.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="212">
+          <caret line="27" column="9" lean-forward="false" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Xml/graph.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="20" lean-forward="true" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/TimingStatistic.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="22" lean-forward="false" selection-start-line="6" selection-start-column="22" selection-end-line="6" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Utility.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="10" lean-forward="false" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/ShortestPathsTable.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="17" lean-forward="false" selection-start-line="42" selection-start-column="17" selection-end-line="42" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Structures/NetworkGraph.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1980">
+          <caret line="132" column="27" lean-forward="false" selection-start-line="132" selection-start-column="27" selection-end-line="132" selection-end-column="27" />
+          <folding>
+            <marker date="1512587236000" expanded="true" signature="6:162" ph="..." />
+            <marker date="1512587236000" expanded="true" signature="8792:8798" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/Program.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="465">
+          <caret line="31" column="35" lean-forward="false" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/SearchAlgorithms/SearchAlgorithm.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/ProgramLoop.cs" />
+    <entry file="file://$PROJECT_DIR$/SelfHealingNetwork/SearchAlgorithms/DijkstraSearch.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="34" column="42" lean-forward="false" selection-start-line="34" selection-start-column="42" selection-end-line="34" selection-end-column="42" />
+          <folding>
+            <marker date="1512586154000" expanded="false" signature="6:115" ph="..." />
+            <marker date="1512586154000" expanded="true" signature="162:1666" ph="{...}" />
+            <marker date="1512586154000" expanded="true" signature="214:1664" ph="{...}" />
+            <marker date="1512586154000" expanded="true" signature="284:1658" ph="{...}" />
+            <marker date="1512586154000" expanded="true" signature="529:1576" ph="{...}" />
+            <marker date="1512586154000" expanded="true" signature="811:1562" ph="{...}" />
+            <marker date="1512586154000" expanded="true" signature="1143:1360" ph="{...}" />
+            <marker date="1512586154000" expanded="true" signature="1397:1543" ph="{...}" />
           </folding>
         </state>
       </provider>

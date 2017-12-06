@@ -169,7 +169,7 @@ namespace SelfHealingNetwork.Structures
             TimingStatistic.NodeInformation.NodeName = droppedNode.Value;
             TimingStatistic.NodeInformation.NumberOfEdges = droppedNode.Edges.Count;
             Console.WriteLine($"Dropped Node had {droppedNode.Neighbors.Count} neighbors");
-            Console.WriteLine($"Graph recovered in {TimingStatistic.ElapsedTime}msecs, {paths.GetSize()} edges added");
+            Console.WriteLine($"----- Graph recovered in {TimingStatistic.ElapsedTime} msecs, {paths.GetSize()} edges added");
         }
 
         private void KruskalsAlgorithm(NodeDroppedEvent e)
@@ -181,6 +181,8 @@ namespace SelfHealingNetwork.Structures
         {
             var index = FindNodeIndexByValue(value1);
             var index2 = FindNodeIndexByValue(value2);
+
+            if (index < 0 || index2 < 0) return false;
 
             if (_nodes[index].Edges.FindIndex(e => e.End.Value == value2) == -1 ||
                _nodes[index2].Edges.FindIndex(e => e.End.Value == value1) == -1)

@@ -22,7 +22,7 @@ namespace SelfHealingNetwork.SearchAlgorithms
                 
                 current.IsVisited = true;
 
-                if (current.Equals(end)) break;
+                //if (current.Equals(end)) break;
 
                 foreach (var edge in current.Edges)
                 {

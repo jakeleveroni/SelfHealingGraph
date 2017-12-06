@@ -17,7 +17,7 @@ namespace SelfHealingNetwork
 
             //_graph = NetworkGraph.BuildGraphFromXmlGraph(graphData);
             _graph = new NetworkGraph();
-            _graph.GenerateNetworkGraph(Utility.MaxNodes, 100);
+            _graph.GenerateNetworkGraph(Utility.MaxNodes, 150);
 
             //var programTimer = new Timer(10000);
             //programTimer.Elapsed += OnTimedEvent;
@@ -29,7 +29,7 @@ namespace SelfHealingNetwork
             while (true)
             {
                 _graph.KillNode();
-                Thread.Sleep(10000);
+                Thread.Sleep(2000);
             }
         }
 

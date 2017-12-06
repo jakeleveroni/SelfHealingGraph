@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using SelfHealingNetwork.Interfaces;
 using SelfHealingNetwork.Structures;
 
@@ -15,8 +16,17 @@ namespace SelfHealingNetwork.SearchAlgorithms
 
             while (current != start)
             {
-                path.Add(current);
-                current = parentMap[current];
+                try
+                {
+                    path.Add(current);
+                    current = parentMap[current];
+                }
+                catch(Exception)
+                {
+                    throw new InvalidProgramException(
+                        "This is a bug, i havnt found the root of it but it does not happen often. Just re-run program");
+                }
+
             }
 
             path.Add(start);
