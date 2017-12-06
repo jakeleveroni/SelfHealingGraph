@@ -4,23 +4,26 @@ using System.Linq;
 using System.Text;
 using SelfHealingNetwork.Interfaces;
 using SelfHealingNetwork.Events;
-using Redbus;
 using SelfHealingNetwork.SearchAlgorithms;
 using SelfHealingNetwork.Xml;
+using Redbus;
+
 
 namespace SelfHealingNetwork.Structures
 {
-    public class NetworkGraph : IDisposable
+    public class NetworkGraph
     {
         private readonly List<Node> _nodes;
         private readonly EventBus _bus;
-        private readonly List<SubscriptionToken> _eventTokens;
+        private delegate void NodeDroppedDel(NodeDroppedEvent e);
+        private NodeDroppedDel NodeDroppedHandler;
 
-        private NetworkGraph()
+        public NetworkGraph(string type="jakes")
         {
             _nodes = new List<Node>();
             _bus = new EventBus();
-            _eventTokens = new List<SubscriptionToken> {_bus.Subscribe<NodeDroppedEvent>(OnNodeDropped)};
+
+            NodeDroppedHandler = (type == "jakes") ? new NodeDroppedDel(JakesAlgorithm) : new NodeDroppedDel(KruskalsAlgorithm);
         }
 
         private void AddNode(Node node)
@@ -30,9 +33,9 @@ namespace SelfHealingNetwork.Structures
         }
 
 
-        public static NetworkGraph BuildGraphFromXmlGraph(Graph graphData)
+        public static NetworkGraph BuildGraphFromXmlGraph(Graph graphData, string type="jakes")
         {
-            var graph = new NetworkGraph();
+            var graph = new NetworkGraph(type);
 
             foreach (var node in graphData.Nodes)
             {
@@ -72,7 +75,7 @@ namespace SelfHealingNetwork.Structures
 
         public bool GenerateNetworkGraph(int nodes = 10, int edges = 12)
         {
-            if (nodes > 26)
+            if (nodes > Utility.MaxNodes)
                 return false;
             
             var nodeVals = Utility.GetPossibleNodeValues();
@@ -108,6 +111,8 @@ namespace SelfHealingNetwork.Structures
                 _nodes[index2].AddEdge(revEdge);
             }
 
+            var edgeCount = _nodes.Sum(n => n.Edges.Count);
+            Console.WriteLine($"Graph of size {_nodes.Count} nodes and {edgeCount} edges generated");
             return true;
         }
 
@@ -128,13 +133,12 @@ namespace SelfHealingNetwork.Structures
             start.Cost = 0;
         }
 
-        private void OnNodeDropped(NodeDroppedEvent e)
+        private void JakesAlgorithm(NodeDroppedEvent e)
         {
-            var timing = new TimingStatistic();
             var droppedNode = e.DroppedNodeInformation;
             Console.WriteLine($"Node {droppedNode.Value} dropped, starting recovery process...");
             
-            timing.Start();
+            TimingStatistic.Start();
 
             var paths = new ShortestPathsTable();
             
@@ -142,7 +146,7 @@ namespace SelfHealingNetwork.Structures
             {
                 foreach (var otherNeighbor in droppedNode.Neighbors)
                 {
-                    Console.WriteLine($"{neighbor.Value} {otherNeighbor.Value}");
+                    //Console.WriteLine($"{neighbor.Value} {otherNeighbor.Value}");
                     if (neighbor == otherNeighbor) continue;
 
                     if (!EdgeAlreadyExists(neighbor.Value, otherNeighbor.Value))
@@ -159,12 +163,18 @@ namespace SelfHealingNetwork.Structures
             paths.TrimExcessPaths();
             FixEdges(paths);
 
-            PrintGraph();
+            //PrintGraph();
 
-            timing.Stop();
-            timing.NodeInformation.NodeName = droppedNode.Value;
-            timing.NodeInformation.NumberOfEdges = droppedNode.Edges.Count;
-            Console.WriteLine($"Graph recovered in {timing.ElapsedTime}msecs");
+            TimingStatistic.Stop();
+            TimingStatistic.NodeInformation.NodeName = droppedNode.Value;
+            TimingStatistic.NodeInformation.NumberOfEdges = droppedNode.Edges.Count;
+            Console.WriteLine($"Dropped Node had {droppedNode.Neighbors.Count} neighbors");
+            Console.WriteLine($"Graph recovered in {TimingStatistic.ElapsedTime}msecs, {paths.GetSize()} edges added");
+        }
+
+        private void KruskalsAlgorithm(NodeDroppedEvent e)
+        {
+            
         }
 
         private bool EdgeAlreadyExists(char value1, char value2)
@@ -207,9 +217,7 @@ namespace SelfHealingNetwork.Structures
                 return false;
             }
             
-            //_bus.Publish(new NodeDroppedEvent(failingNode));
-
-            OnNodeDropped(new NodeDroppedEvent(failingNode));
+            NodeDroppedHandler(new NodeDroppedEvent(failingNode));
             return true;
         }
 
@@ -219,11 +227,22 @@ namespace SelfHealingNetwork.Structures
 
             if (node != default(Node))
             {
-                OnNodeDropped(new NodeDroppedEvent(node));
+                NodeDroppedHandler(new NodeDroppedEvent(node));
                 return true;
             }
 
             return false;
+        }
+
+        private void ApplyGraphTransformations(List<Node> nodes)
+        {
+            foreach (var node in nodes)
+            {
+                var n = FindNodeByValue(node.Value);
+
+                n.Edges.Clear();
+                n.Edges.AddRange(node.Edges);
+            }
         }
 
         public void PrintGraph()
@@ -246,6 +265,5 @@ namespace SelfHealingNetwork.Structures
         private Node CheckForFailingNode() =>_nodes.FirstOrDefault(node => node.WillFail());
         private int FindNodeIndexByValue(char val) => _nodes.FindIndex(n => n.Value == val);
         public Node FindNodeByValue(char value) =>  _nodes.Find(n => n.Value == value);
-        public void Dispose() => _eventTokens.ForEach(t => _bus.Unsubscribe(t));    
     }
 }

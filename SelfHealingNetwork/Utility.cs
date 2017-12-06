@@ -7,7 +7,8 @@ namespace SelfHealingNetwork
 {
     public static class Utility
     {
-        private static string _nodeVals= "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+        private static string _nodeVals= @"ABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890!@#$%^&*()-_=+[{]}\|;:',<.>/?";
+        public static int MaxNodes { get => _nodeVals.Length;  }
 
         public static List<NodeValue> GetPossibleNodeValues()
         {

@@ -39,9 +39,21 @@ namespace SelfHealingNetwork.Structures
                 // case if multiple shortest paths
                 if (PotentialShortestPaths[key].Count > 1)
                 {
-                    PotentialShortestPaths[key].RemoveRange(1, PotentialShortestPaths[key].Count);
+                    PotentialShortestPaths[key].RemoveRange(1, PotentialShortestPaths[key].Count - 1);
                 }
             }
+        }
+
+        public int GetSize()
+        {
+            int size = 0;
+
+            foreach (var key in PotentialShortestPaths.Keys)
+            {
+                size += PotentialShortestPaths[key].Count;
+            }
+
+            return size;
         }
     }
 }

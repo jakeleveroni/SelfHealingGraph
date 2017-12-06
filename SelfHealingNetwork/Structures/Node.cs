@@ -27,6 +27,15 @@ namespace SelfHealingNetwork.Structures
             _failureProbability = Rng.Next(1, 101);
         }
 
+        public Node(Node other)
+        {
+            Value = other.Value;
+            IsVisited = other.IsVisited;
+            Neighbors = new List<Node>(other.Neighbors);
+            Edges = new List<WeightedEdge>(other.Edges);
+            _failureProbability = other._failureProbability;
+        }
+
         public override string ToString()
         {
             var s = new StringBuilder("{value} :");

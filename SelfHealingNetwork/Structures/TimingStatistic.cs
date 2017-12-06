@@ -2,10 +2,13 @@
 
 namespace SelfHealingNetwork.Structures
 {
-    public class TimingStatistic
+    public static class TimingStatistic
     {
-        private DateTime _startTime;
-        private DateTime _endTime;
+        [ThreadStatic]
+        private static DateTime _startTime;
+
+        [ThreadStatic]
+        private static DateTime _endTime;
 
         public struct NodeInfo
         {
@@ -13,10 +16,10 @@ namespace SelfHealingNetwork.Structures
             public int NumberOfEdges;
         }
 
-        public NodeInfo NodeInformation;
+        public static NodeInfo NodeInformation;
 
-        public int ElapsedTime => (_endTime - _startTime).Milliseconds;
-        public void Start() => _startTime = DateTime.Now;
-        public void Stop() => _endTime = DateTime.Now;
+        public static int ElapsedTime => (_endTime - _startTime).Milliseconds;
+        public static void Start() => _startTime = DateTime.Now;
+        public static void Stop() => _endTime = DateTime.Now;
     }
 }

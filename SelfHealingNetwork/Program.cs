@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Threading;
 using System.Timers;
+using System.Threading;
 using SelfHealingNetwork.Structures;
 using SelfHealingNetwork.Xml;
 
@@ -16,23 +15,27 @@ namespace SelfHealingNetwork
             var deser = new Deserializer();
             var graphData = deser.LoadGraph();
 
-            _graph = NetworkGraph.BuildGraphFromXmlGraph(graphData);
-            _graph.PrintGraph();
+            //_graph = NetworkGraph.BuildGraphFromXmlGraph(graphData);
+            _graph = new NetworkGraph();
+            _graph.GenerateNetworkGraph(Utility.MaxNodes, 100);
 
-            var programTimer = new System.Timers.Timer(10000);
-            programTimer.Elapsed += OnTimedEvent;
-            programTimer.Interval = 10000;
-            programTimer.Enabled = true;
+            //var programTimer = new Timer(10000);
+            //programTimer.Elapsed += OnTimedEvent;
+            //programTimer.Enabled = true;
 
-            _graph.DebugKillNode('F');
+            //_graph.KillNode();
+            //_graph.DebugKillNode('F');
 
-            Console.ReadKey();
+            while (true)
+            {
+                _graph.KillNode();
+                Thread.Sleep(10000);
+            }
         }
 
         private static void OnTimedEvent(object source, ElapsedEventArgs e)
         {
             _graph.KillNode();
-        }
-        
+        }  
     }
 }

@@ -41,7 +41,7 @@ namespace SelfHealingNetwork.SearchAlgorithms
                     }
                     catch(Exception)
                     {
-                        Console.WriteLine("Tried adding node that already exists. Look into this");
+                        //Console.WriteLine("Tried adding node that already exists. Look into this");
                     }
 
                 }
