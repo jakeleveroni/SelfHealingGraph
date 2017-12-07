@@ -25,12 +25,12 @@ To generate these run configurations follow these steps:
 3. A window should pop up, on the left hand side you should see a section called "Run" click it
 4. There should be a section called "configurations" click it and look for a button to add a new configuration and click it 
 
-![Could not fetch example image]:(https://github.com/jakeleveroni/SelfHealingGraph/blob/master/SelfHealingNetwork/Assets/configuration2.png)
+![Could not fetch example image](https://github.com/jakeleveroni/SelfHealingGraph/blob/master/SelfHealingNetwork/Assets/configuration2.png)
 
 5. A dialogue should pop up and ask for a name, call it GenerateGraph
 6. In the "Arguments" text box enter the string "gen" (without the quotes)
 
-![Could not fetch example image]:(https://github.com/jakeleveroni/SelfHealingGraph/blob/master/SelfHealingNetwork/Assets/configuration1.png)
+![Could not fetch example image](https://github.com/jakeleveroni/SelfHealingGraph/blob/master/SelfHealingNetwork/Assets/configuration1.png)
 
 7. Repeat steps 1 - 7 but in again but instead of naming your configuration "GenerateGraph" call it "XmlGraph" and the "Argument" should be "xml"
  
